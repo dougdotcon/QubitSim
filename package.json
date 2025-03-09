@@ -1,0 +1,30 @@
+{
+  "name": "qubitsim",
+  "version": "1.0.0",
+  "description": "Biblioteca JavaScript para simulação de computação quântica e criptografia quântica",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node examples/basic-usage.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "jsdoc -c jsdoc.json"
+  },
+  "keywords": [
+    "quantum",
+    "computing",
+    "cryptography",
+    "qubit",
+    "quantum-cryptography",
+    "simulation"
+  ],
+  "author": "Maikon Weber",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maikonweber/qubitsim.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maikonweber/qubitsim/issues"
+  },
+  "homepage": "https://github.com/maikonweber/qubitsim#readme"
+}

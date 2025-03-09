@@ -1,0 +1,95 @@
+/* Estilos para nós quânticos */
+.quantum-node {
+  padding: 10px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #1a192b;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quantum-node:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.node-content {
+  text-align: center;
+}
+
+.node-label {
+  font-weight: bold;
+  color: #1a192b;
+}
+
+.node-state {
+  font-size: 0.8em;
+  color: #666;
+}
+
+/* Estilos para portas quânticas */
+.gate-node {
+  padding: 10px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  border: 2px solid #1a192b;
+  width: 80px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gate-node:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gate-symbol {
+  font-weight: bold;
+  color: #1a192b;
+  font-size: 1.2em;
+}
+
+/* Estilos para conexões */
+.react-flow__edge-path {
+  stroke: #1a192b;
+  stroke-width: 2;
+}
+
+.react-flow__edge.animated path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+}
+
+/* Estilos para o painel de controle */
+.control-panel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o minimapa */
+.react-flow__minimap {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o fundo */
+.react-flow__background {
+  background-color: #f8f9fa;
+} 
