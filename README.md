@@ -215,6 +215,21 @@ Este projeto está sob a licença ISC. Veja o arquivo [LICENSE](LICENSE) para ma
   </tr>
 </table>
 
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/dougdotcon">
+        <img src="https://github.com/dougdotcon.png" width="100px;" alt="Douglas Machado"/>
+        <br />
+        <sub><b>Douglas Machado</b></sub>
+      </a>
+      <br />
+      <sub>Desenvolvimento inicial</sub>
+    </td>
+    <!-- Adicione mais colaboradores aqui -->
+  </tr>
+</table>
+
 ---
 
 ## 📝 Notas
