@@ -4,7 +4,7 @@
 - [x] Criar estrutura de pastas para interface
 - [x] Configurar ambiente React
 - [x] Instalar dependências necessárias
-- [ ] Configurar roteamento
+- [x] Configurar roteamento
 - [x] Configurar tema e estilos base
 
 ## 📊 Fase 2: Componentes Base
@@ -32,7 +32,13 @@
 - [x] Portas Quânticas
   - [x] Implementar portas básicas (H, X, Y, Z)
   - [x] Implementar portas controladas (CNOT)
+  - [x] Implementar portas de fase
   - [ ] Adicionar animações de transformação
+- [x] Algoritmos Quânticos
+  - [x] Algoritmo de Deutsch-Jozsa
+  - [x] Algoritmo de Grover
+  - [ ] Algoritmo de Shor (versão simplificada)
+  - [ ] Algoritmo de Bernstein-Vazirani
 - [ ] Simulação
   - [ ] Atualização em tempo real
   - [ ] Cálculo de estados
@@ -57,17 +63,19 @@
 ## 📚 Fase 6: Documentação
 - [x] Documentação de Componentes
 - [x] Guia de Uso
-- [ ] Exemplos
+- [x] Exemplos
 - [ ] API Reference
 
 ## 🔄 Status Atual
 - Fase: 3 - Funcionalidades Core
-- Progresso: 60%
+- Progresso: 75%
 - Próximos passos: 
-  1. Implementar animações de transformação
-  2. Desenvolver sistema de simulação
-  3. Adicionar responsividade
-  4. Implementar testes
+  1. Implementar algoritmo de Shor
+  2. Implementar algoritmo de Bernstein-Vazirani
+  3. Adicionar animações de transformação
+  4. Desenvolver sistema de simulação
+  5. Adicionar responsividade
+  6. Implementar testes
 
 ## 📝 Notas
 - Priorizar componentes essenciais

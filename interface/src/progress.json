@@ -1,0 +1,25 @@
+{
+  "phase": "Core Functionalities",
+  "progress": 80,
+  "completed": [
+    "Quantum Register",
+    "Quantum Gates",
+    "Quantum Circuits",
+    "Quantum Measurements",
+    "Deutsch-Jozsa Algorithm",
+    "Grover's Algorithm",
+    "Shor's Algorithm",
+    "Bernstein-Vazirani Algorithm"
+  ],
+  "in_progress": [
+    "Quantum Error Correction",
+    "Quantum State Visualization"
+  ],
+  "pending": [
+    "Quantum Teleportation",
+    "Quantum Entanglement",
+    "Quantum Key Distribution",
+    "Quantum Fourier Transform",
+    "Quantum Phase Estimation"
+  ]
+} 
