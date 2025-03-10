@@ -8,7 +8,7 @@
     <a href="https://github.com/yourusername/qubitsim/network/members"><img src="https://img.shields.io/github/forks/yourusername/qubitsim?style=flat-square" alt="Forks Badge"/></a>
     <a href="https://github.com/yourusername/qubitsim/pulls"><img src="https://img.shields.io/github/issues-pr/yourusername/qubitsim?style=flat-square" alt="Pull Requests Badge"/></a>
     <a href="https://github.com/yourusername/qubitsim/issues"><img src="https://img.shields.io/github/issues/yourusername/qubitsim?style=flat-square" alt="Issues Badge"/></a>
-    <a href="https://github.com/yourusername/qubitsim/blob/master/LICENSE"><img src="https://img.shields.io/github/license/yourusername/qubitsim?style=flat-square" alt="License Badge"/></a>
+    <a href="https://github.com/yourusername/qubitsim/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="License Badge"/></a>
   </p>
   
   <p>
@@ -194,7 +194,20 @@ Consulte o [guia de contribuição](CONTRIBUTING.md) para mais detalhes.
 
 ## 📄 Licença
 
-Este projeto está sob a licença ISC. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está licenciado sob a [Licença MIT](LICENSE) - veja o arquivo LICENSE para detalhes.
+
+<div align="center">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"/>
+</div>
+
+A licença MIT é uma licença de software permissiva que coloca poucas restrições de uso, modificação e distribuição. Ela permite:
+
+- ✅ Uso comercial
+- ✅ Modificação
+- ✅ Distribuição
+- ✅ Uso privado
+
+A única exigência é manter o aviso de copyright e a licença em qualquer cópia do software/código fonte.
 
 ---
 
