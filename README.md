@@ -1,40 +1,85 @@
 <div align="center">
-  <img src="assets/img/LOGOSPNG/logo.png" alt="Nexlify" width="220"/>
+  <img src="assets/img/LOGOSPNG/logo.png" alt="QubitSim" width="220"/>
+  <h1>QubitSim</h1>
+  <p><strong>Uma biblioteca JavaScript para simulação de computação quântica e criptografia quântica</strong></p>
   
-# QubitSim
+  <p>
+    <a href="https://github.com/yourusername/qubitsim/stargazers"><img src="https://img.shields.io/github/stars/yourusername/qubitsim?style=flat-square" alt="Stars Badge"/></a>
+    <a href="https://github.com/yourusername/qubitsim/network/members"><img src="https://img.shields.io/github/forks/yourusername/qubitsim?style=flat-square" alt="Forks Badge"/></a>
+    <a href="https://github.com/yourusername/qubitsim/pulls"><img src="https://img.shields.io/github/issues-pr/yourusername/qubitsim?style=flat-square" alt="Pull Requests Badge"/></a>
+    <a href="https://github.com/yourusername/qubitsim/issues"><img src="https://img.shields.io/github/issues/yourusername/qubitsim?style=flat-square" alt="Issues Badge"/></a>
+    <a href="https://github.com/yourusername/qubitsim/blob/master/LICENSE"><img src="https://img.shields.io/github/license/yourusername/qubitsim?style=flat-square" alt="License Badge"/></a>
+  </p>
+  
+  <p>
+    <a href="#sobre-o-projeto">Sobre</a> •
+    <a href="#funcionalidades">Funcionalidades</a> •
+    <a href="#tecnologias-utilizadas">Tecnologias</a> •
+    <a href="#instalação">Instalação</a> •
+    <a href="#como-usar">Como Usar</a> •
+    <a href="#estrutura-do-projeto">Estrutura</a> •
+    <a href="#documentação">Documentação</a> •
+    <a href="#contribuindo">Contribuir</a>
+  </p>
+</div>
 
-Uma biblioteca JavaScript para simulação de computação quântica e criptografia quântica.
+---
 
 ## 📋 Sobre o Projeto
 
-QubitSim é uma biblioteca que implementa conceitos fundamentais de computação quântica e criptografia quântica em JavaScript. O projeto permite simular operações com qubits, implementar algoritmos quânticos e realizar criptografia quântica.
+**QubitSim** é uma biblioteca JavaScript moderna que implementa conceitos fundamentais de computação quântica e criptografia quântica. Projetada para ser intuitiva e educacional, permite aos desenvolvedores e pesquisadores:
+
+- Simular operações com qubits
+- Implementar algoritmos quânticos clássicos
+- Explorar protocolos de criptografia quântica
+- Visualizar estados quânticos
+
+Ideal para estudantes, educadores e entusiastas que desejam explorar o fascinante mundo da computação quântica sem a necessidade de hardware quântico real.
+
+---
 
 ## 🚀 Funcionalidades
 
-### Operações Quânticas Básicas
-- Manipulação de qubits
-- Aplicação de portas quânticas (H, X, Y, Z, CNOT)
-- Emaranhamento de qubits
-- Medição de estados quânticos
+### ⚛️ Operações Quânticas Básicas
+- **Manipulação de qubits**: Criação, transformação e medição de qubits
+- **Portas quânticas**: Implementação de portas fundamentais (H, X, Y, Z, CNOT)
+- **Emaranhamento quântico**: Simulação de estados emaranhados
+- **Medição quântica**: Colapso de superposições e obtenção de resultados clássicos
 
-### Criptografia Quântica
-- Geração de chaves quânticas
-- Protocolo BB84
-- Criptografia e descriptografia de mensagens
-- Detecção de interferência
-- Autenticação de participantes
+### 🔐 Criptografia Quântica
+- **Geração de chaves quânticas**: Criação segura de chaves usando princípios quânticos
+- **Protocolo BB84**: Implementação do primeiro protocolo de distribuição quântica de chaves
+- **Criptografia e descriptografia**: Proteção de mensagens usando chaves quânticas
+- **Detecção de interferência**: Identificação de tentativas de espionagem
+- **Autenticação quântica**: Verificação segura de identidades
+
+### 🧮 Algoritmos Quânticos
+- **Deutsch-Jozsa**: Determinação de propriedades de funções booleanas
+- **Grover**: Busca em bases de dados não estruturadas
+- **Shor**: Fatoração de números inteiros
+- **Bernstein-Vazirani**: Descoberta de strings ocultas
+
+---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- JavaScript (ES Modules)
-- Node.js
-- JSDoc (para documentação)
+<div align="center">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"/>
+  <img src="https://img.shields.io/badge/ESModules-007ACC?style=for-the-badge&logo=javascript&logoColor=white" alt="ES Modules"/>
+  <img src="https://img.shields.io/badge/JSDoc-008CC1?style=for-the-badge&logo=javascript&logoColor=white" alt="JSDoc"/>
+  <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" alt="Jest"/>
+</div>
+
+---
 
 ## 📦 Instalação
 
 ```bash
 npm install qubitsim
 ```
+
+---
 
 ## 💻 Como Usar
 
@@ -53,9 +98,25 @@ qubit.applyHadamard();
 
 // Realizar uma medição
 const result = qubit.measure();
+console.log(`Resultado da medição: ${result}`);
 ```
 
-Para mais exemplos, consulte a pasta `examples/`.
+### Exemplo de Algoritmo Quântico
+
+```javascript
+import { DeutschJozsa } from 'qubitsim/algorithms';
+
+// Criar uma instância do algoritmo com 3 qubits
+const dj = new DeutschJozsa(3);
+
+// Executar o algoritmo
+const result = await dj.execute();
+console.log(`A função é ${result ? 'balanceada' : 'constante'}`);
+```
+
+> 📘 **Nota**: Para mais exemplos detalhados, consulte a pasta `examples/`.
+
+---
 
 ## 📁 Estrutura do Projeto
 
@@ -74,12 +135,19 @@ qubitsim/
 │   │   ├── hadamard.js
 │   │   ├── pauli.js
 │   │   └── cnot.js
+│   ├── algorithms/     # Algoritmos quânticos
+│   │   ├── deutschJozsa.js
+│   │   ├── grover.js
+│   │   ├── shor.js
+│   │   └── bernsteinVazirani.js
 │   └── index.js
 ├── tests/              # Testes unitários
-├── docs/              # Documentação da API
-├── examples/          # Exemplos de uso
+├── docs/               # Documentação da API
+├── examples/           # Exemplos de uso
 └── package.json
 ```
+
+---
 
 ## 📚 Documentação
 
@@ -89,30 +157,72 @@ A documentação completa da API está disponível em `docs/`. Para gerar a docu
 npm run docs
 ```
 
+Após a geração, abra `docs/index.html` no seu navegador para explorar a documentação interativa.
+
+---
+
 ## 🧪 Testes
 
-Para executar os testes:
+Para garantir a qualidade e confiabilidade, o QubitSim possui uma suíte abrangente de testes:
 
 ```bash
+# Executar todos os testes
 npm test
+
+# Executar testes com cobertura
+npm run test:coverage
+
+# Executar testes específicos
+npm test -- --testPathPattern=qubit
 ```
+
+---
 
 ## 🤝 Contribuindo
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
+Contribuições são bem-vindas e muito apreciadas! Siga estes passos:
+
+1. 🍴 Faça um fork do projeto
+2. 🌿 Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. 💾 Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. 📤 Push para a branch (`git push origin feature/AmazingFeature`)
+5. 🔍 Abra um Pull Request
+
+Consulte o [guia de contribuição](CONTRIBUTING.md) para mais detalhes.
+
+---
 
 ## 📄 Licença
 
-Este projeto está sob a licença ISC. Veja o arquivo [License.md](License.md) para mais detalhes.
+Este projeto está sob a licença ISC. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
 
 ## 👥 Autores
 
-- **Maikon Weber** - *Desenvolvimento inicial*
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/maikonweber">
+        <img src="https://github.com/maikonweber.png" width="100px;" alt="Maikon Weber"/>
+        <br />
+        <sub><b>Maikon Weber</b></sub>
+      </a>
+      <br />
+      <sub>Desenvolvimento inicial</sub>
+    </td>
+    <!-- Adicione mais colaboradores aqui -->
+  </tr>
+</table>
+
+---
 
 ## 📝 Notas
 
-Este é um projeto educacional para estudo e simulação de conceitos de computação quântica. Não deve ser usado para criptografia em produção sem uma revisão de segurança adequada. 
+Este é um projeto educacional para estudo e simulação de conceitos de computação quântica. Não deve ser usado para criptografia em produção sem uma revisão de segurança adequada.
+
+---
+
+<div align="center">
+  <sub>Construído com ❤️ por entusiastas da computação quântica.</sub>
+</div> 
