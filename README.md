@@ -431,6 +431,21 @@ A única exigência é manter o aviso de copyright e a licença em qualquer cóp
   </tr>
 </table>
 
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/suissan">
+        <img src="https://github.com/suissan.png" width="100px;" alt="Jean Suissan"/>
+        <br />
+        <sub><b>Douglas Machado</b></sub>
+      </a>
+      <br />
+      <sub>Desenvolvimento inicial</sub>
+    </td>
+  </tr>
+</table>
+
+
 ---
 
 ## 📝 Notas
