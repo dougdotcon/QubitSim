@@ -17,18 +17,7 @@
   <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis"/>
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
 </div>
-  
-  <p>
-    <a href="#sobre-o-projeto">Sobre</a> •
-    <a href="#funcionalidades">Funcionalidades</a> •
-    <a href="#tecnologias-utilizadas">Tecnologias</a> •
-    <a href="#instalação">Instalação</a> •
-    <a href="#como-usar">Como Usar</a> •
-    <a href="#estrutura-do-projeto">Estrutura</a> •
-    <a href="#documentação">Documentação</a> •
-    <a href="#contribuindo">Contribuir</a>
-  </p>
-</div>
+
 
 ---
 
