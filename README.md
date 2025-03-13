@@ -414,11 +414,6 @@ A única exigência é manter o aviso de copyright e a licença em qualquer cóp
       <br />
       <sub>Desenvolvimento inicial</sub>
     </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
     <td align="center">
       <a href="https://github.com/dougdotcon">
         <img src="https://github.com/dougdotcon.png" width="100px;" alt="Douglas Machado"/>
@@ -428,16 +423,11 @@ A única exigência é manter o aviso de copyright e a licença em qualquer cóp
       <br />
       <sub>Desenvolvimento inicial</sub>
     </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
     <td align="center">
-      <a href="https://github.com/suissan">
-        <img src="https://github.com/suissan.png" width="100px;" alt="Jean Suissan"/>
+      <a href="https://github.com/suissa">
+        <img src="https://github.com/suissa.png" width="100px;" alt="Jean Suissa"/>
         <br />
-        <sub><b>Douglas Machado</b></sub>
+        <sub><b>Jean Suissa</b></sub>
       </a>
       <br />
       <sub>Desenvolvimento inicial</sub>
