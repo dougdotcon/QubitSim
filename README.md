@@ -5,13 +5,18 @@
   <h1>QubitSim</h1>
   <p><strong>Uma biblioteca JavaScript para simulação de computação quântica e criptografia quântica</strong></p>
   
-  <p>
-    <a href="https://github.com/yourusername/qubitsim/stargazers"><img src="https://img.shields.io/github/stars/yourusername/qubitsim?style=flat-square" alt="Stars Badge"/></a>
-    <a href="https://github.com/yourusername/qubitsim/network/members"><img src="https://img.shields.io/github/forks/yourusername/qubitsim?style=flat-square" alt="Forks Badge"/></a>
-    <a href="https://github.com/yourusername/qubitsim/pulls"><img src="https://img.shields.io/github/issues-pr/yourusername/qubitsim?style=flat-square" alt="Pull Requests Badge"/></a>
-    <a href="https://github.com/yourusername/qubitsim/issues"><img src="https://img.shields.io/github/issues/yourusername/qubitsim?style=flat-square" alt="Issues Badge"/></a>
-    <a href="https://github.com/yourusername/qubitsim/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="License Badge"/></a>
-  </p>
+<div align="center">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"/>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+  <img src="https://img.shields.io/badge/ESModules-007ACC?style=for-the-badge&logo=javascript&logoColor=white" alt="ES Modules"/>
+  <img src="https://img.shields.io/badge/JSDoc-008CC1?style=for-the-badge&logo=javascript&logoColor=white" alt="JSDoc"/>
+  <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" alt="Jest"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
+</div>
   
   <p>
     <a href="#sobre-o-projeto">Sobre</a> •
@@ -88,21 +93,6 @@ Ideal para estudantes, educadores e entusiastas que desejam explorar o fascinant
 - **Segurança**: Verificações automáticas de vulnerabilidades
 
 ---
-
-## 🛠️ Tecnologias Utilizadas
-
-<div align="center">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"/>
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
-  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
-  <img src="https://img.shields.io/badge/ESModules-007ACC?style=for-the-badge&logo=javascript&logoColor=white" alt="ES Modules"/>
-  <img src="https://img.shields.io/badge/JSDoc-008CC1?style=for-the-badge&logo=javascript&logoColor=white" alt="JSDoc"/>
-  <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" alt="Jest"/>
-  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
-  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis"/>
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
-</div>
 
 ---
 
