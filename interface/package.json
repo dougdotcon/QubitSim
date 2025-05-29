@@ -1,6 +1,7 @@
 {
   "name": "qubitsim-interface",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.0",
@@ -47,4 +48,4 @@
     "@types/react-dom": "^18.2.0",
     "typescript": "^4.9.5"
   }
-} 
+}
