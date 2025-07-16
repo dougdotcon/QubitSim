@@ -34,6 +34,9 @@
 
 Ideal para estudantes, educadores e entusiastas que desejam explorar o fascinante mundo da computação quântica sem a necessidade de hardware quântico real.
 
+> **Nota de escopo:**
+> Este projeto é um **simulador clássico** de computação quântica. Ele implementa, de forma funcional, qubits, registradores quânticos, portas quânticas (Hadamard, Pauli, CNOT, etc.), algoritmos reconhecidos (como Quantum Monte Carlo, Metropolis-Hastings, Parallel Tempering, Deutsch-Jozsa, Grover, Shor, Bernstein-Vazirani) e integrações de performance via WebAssembly. O QubitSim permite estudar, experimentar e prototipar algoritmos quânticos em ambiente clássico, sendo útil para ensino, pesquisa e desenvolvimento de ideias. **Não é um sistema para execução em hardware quântico real, mas sim um laboratório de simulação e aprendizado, como é padrão em projetos educacionais e de pesquisa na área.**
+
 ---
 
 ## 🚀 Funcionalidades
