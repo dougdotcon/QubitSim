@@ -3,438 +3,118 @@
 <div align="center">
   <img src="assets/img/LOGOSPNG/logo.png" alt="QubitSim" width="220"/>
   <h1>QubitSim</h1>
-  <p><strong>Uma biblioteca JavaScript para simulação de computação quântica e criptografia quântica</strong></p>
+  <p><strong>A JavaScript library for simulating quantum computing and post-quantum cryptography</strong></p>
 </div>
+
 <div align="center">
+  <!-- Core Technologies -->
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"/>
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
   <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
   <img src="https://img.shields.io/badge/ESModules-007ACC?style=for-the-badge&logo=javascript&logoColor=white" alt="ES Modules"/>
+  <!-- Frameworks & Tooling -->
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"/>
   <img src="https://img.shields.io/badge/JSDoc-008CC1?style=for-the-badge&logo=javascript&logoColor=white" alt="JSDoc"/>
   <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" alt="Jest"/>
+  <!-- Infrastructure -->
   <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
   <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis"/>
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
 </div>
 
+---
+
+## 📋 Project Overview
+
+**QubitSim** is a modern JavaScript library implementing fundamental concepts of quantum computing and post-quantum cryptography. Designed to be intuitive and educational, it enables developers and researchers to:
+
+- Simulate qubit operations and quantum registers
+- Implement classical quantum algorithms (Grover, Shor, Deutsch-Jozsa, etc.)
+- Visualize quantum states and amplitudes
+- Explore quantum cryptographic protocols
+- Monitor performance via WebAssembly integration
+
+Ideal for students, educators, and enthusiasts exploring the fascinating world of quantum computing without the need for real quantum hardware.
+
+> **Scope Note:**
+> This project is a **classical simulator**. It functionally implements qubits, gates, and algorithms to serve as a laboratory for simulation and learning. It is **not** a system for execution on physical quantum hardware, but rather a standard educational and research tool for prototyping quantum logic.
 
 ---
 
-## 📋 Sobre o Projeto
+## 🚀 Key Features
 
-**QubitSim** é uma biblioteca JavaScript moderna que implementa conceitos fundamentais de computação quântica e criptografia quântica. Projetada para ser intuitiva e educacional, permite aos desenvolvedores e pesquisadores:
+### ⚛️ Fundamental Quantum Operations
+- **Qubit Manipulation**: Creation, transformation, and measurement of quantum states.
+- **Quantum Gates**: Implementation of Hadamard (H), Pauli (X, Y, Z), CNOT, and rotation gates.
+- **Visualizers**: Tools to visualize the state vector and probability distribution of the system.
 
-- Simular operações com qubits
-- Implementar algoritmos quânticos clássicos
-- Explorar protocolos de criptografia quântica
-- Visualizar estados quânticos
-- Monitorar e otimizar performance
-- Desenvolver interfaces acessíveis e internacionalizadas
+### 🔐 Quantum Cryptography
+- **Protocol Simulation**: Simulations of Quantum Key Distribution (QKD) protocols.
+- **Attack Models**: Implementation of eavesdropping scenarios to demonstrate security.
 
-Ideal para estudantes, educadores e entusiastas que desejam explorar o fascinante mundo da computação quântica sem a necessidade de hardware quântico real.
-
-> **Nota de escopo:**
-> Este projeto é um **simulador clássico** de computação quântica. Ele implementa, de forma funcional, qubits, registradores quânticos, portas quânticas (Hadamard, Pauli, CNOT, etc.), algoritmos reconhecidos (como Quantum Monte Carlo, Metropolis-Hastings, Parallel Tempering, Deutsch-Jozsa, Grover, Shor, Bernstein-Vazirani) e integrações de performance via WebAssembly. O QubitSim permite estudar, experimentar e prototipar algoritmos quânticos em ambiente clássico, sendo útil para ensino, pesquisa e desenvolvimento de ideias. **Não é um sistema para execução em hardware quântico real, mas sim um laboratório de simulação e aprendizado, como é padrão em projetos educacionais e de pesquisa na área.**
-
----
-
-## 🚀 Funcionalidades
-
-### ⚛️ Operações Quânticas Básicas
-- **Manipulação de qubits**: Criação, transformação e medição de qubits
-- **Portas quânticas**: Implementação de portas fundamentais (H, X, Y, Z, CNOT)
-- **Emaranhamento quântico**: Simulação de estados emaranhados
-- **Medição quântica**: Colapso de superposições e obtenção de resultados clássicos
-- **Visualização avançada**: Interface gráfica interativa para circuitos quânticos
-
-### 🔐 Criptografia Quântica
-- **Geração de chaves quânticas**: Criação segura de chaves usando princípios quânticos
-- **Protocolo BB84**: Implementação do primeiro protocolo de distribuição quântica de chaves
-- **Criptografia e descriptografia**: Proteção de mensagens usando chaves quânticas
-- **Detecção de interferência**: Identificação de tentativas de espionagem
-- **Autenticação quântica**: Verificação segura de identidades
-- **Validação de segurança**: Verificações automáticas de vulnerabilidades
-
-### 🧮 Algoritmos Quânticos
-- **Deutsch-Jozsa**: Determinação de propriedades de funções booleanas
-- **Grover**: Busca em bases de dados não estruturadas
-- **Shor**: Fatoração de números inteiros
-- **Bernstein-Vazirani**: Descoberta de strings ocultas
-- **Visualização de algoritmos**: Interface interativa para acompanhamento de execução
-
-### 📊 Monitoramento e Performance
-- **Métricas em tempo real**: Monitoramento de uso de recursos
-- **Profiling**: Análise detalhada de performance
-- **Otimização automática**: Cache inteligente e lazy loading
-- **Rastreamento**: Logs estruturados e análise de erros
-- **Dashboards**: Visualização de métricas e alertas
-
-### 🌐 Interface e Acessibilidade
-- **Interface responsiva**: Adaptação a diferentes dispositivos
-- **Internacionalização**: Suporte a múltiplos idiomas (pt-BR, en, es)
-- **Acessibilidade**: Conformidade com WCAG 2.1
-- **Temas personalizáveis**: Suporte a temas claros e escuros
-- **Componentes reutilizáveis**: Biblioteca de componentes React
-
-### 🔄 DevOps e CI/CD
-- **Pipeline automatizado**: Testes, build e deploy automáticos
-- **Controle de qualidade**: Linting e análise estática
-- **Monitoramento**: Integração com ferramentas de APM
-- **Backup automático**: Rotinas de backup e recuperação
-- **Segurança**: Verificações automáticas de vulnerabilidades
+### ⚡ Performance & Tooling
+- **WebAssembly Integration**: Heavy computational tasks are offloaded to WASM for speed.
+- **Type-Safe**: Written in TypeScript for robust development.
+- **Testing**: Comprehensive unit tests using Jest to ensure algorithmic accuracy.
+- **Infrastructure Ready**: Includes Docker configurations for PostgreSQL and Redis for state management or backend scaling.
 
 ---
 
----
+## 🏗️ Architecture
 
-## 📦 Instalação
+The project is structured into three main layers:
 
-```bash
-# Instalação básica
-npm install qubitsim
-
-# Instalação com suporte a internacionalização
-npm install qubitsim i18next react-i18next
-
-# Instalação com todas as dependências opcionais
-npm install qubitsim i18next react-i18next @sentry/react @sentry/tracing redis
-```
+1. **Core Engine**: The mathematical backbone handling linear algebra operations (complex numbers, matrix multiplication).
+2. **Simulation Layer**: Logic for specific algorithms and gate operations.
+3. **Interface Layer**: React-based UI for visualization and Node.js API for programmatic access.
 
 ---
 
-## 💻 Como Usar
+## 🔧 Installation & Usage
 
-### Exemplo Básico de Uso
+### Prerequisites
+- Node.js (v16+)
+- Docker (optional, for infrastructure)
 
-```javascript
-import { Qubit } from 'qubitsim/core';
-import { QuantumRegister } from 'qubitsim/core';
-import { generateKey, encryptMessage, decryptMessage } from 'qubitsim/crypto';
+### Install Dependencies
+bash
+npm install
 
-// Criar um qubit
-const qubit = new Qubit();
 
-// Aplicar uma porta Hadamard
-qubit.applyHadamard();
-
-// Realizar uma medição
-const result = qubit.measure();
-console.log(`Resultado da medição: ${result}`);
-```
-
-### Exemplo de Algoritmo Quântico com Visualização
-
-```javascript
-import { DeutschJozsa } from 'qubitsim/algorithms';
-import { AlgorithmVisualizer } from 'qubitsim/ui';
-
-// Criar uma instância do algoritmo com 3 qubits
-const dj = new DeutschJozsa(3);
-
-// Criar visualizador
-const visualizer = new AlgorithmVisualizer(dj);
-
-// Executar o algoritmo com visualização
-const result = await visualizer.executeWithVisualization();
-console.log(`A função é ${result ? 'balanceada' : 'constante'}`);
-```
-
-### Exemplo de Internacionalização
-
-```javascript
-import { useTranslation } from 'react-i18next';
-import { QuantumCircuit } from 'qubitsim/ui';
-
-const QuantumApp = () => {
-  const { t, i18n } = useTranslation();
-
-  return (
-    <div>
-      <h1>{t('quantum.circuit.title')}</h1>
-      <QuantumCircuit 
-        labels={{
-          addQubit: t('quantum.circuit.addQubit'),
-          measure: t('quantum.circuit.measure')
-        }}
-      />
-    </div>
-  );
-};
-```
-
-### Exemplo de Monitoramento
-
-```javascript
-import { PerformanceMonitor } from 'qubitsim/monitoring';
-
-// Configurar monitoramento
-const monitor = new PerformanceMonitor({
-  metrics: ['cpu', 'memory', 'qubits'],
-  interval: 1000
-});
-
-// Iniciar coleta de métricas
-monitor.start();
-
-// Executar algoritmo com monitoramento
-const algorithm = new QuantumAlgorithm();
-const result = await monitor.track(() => algorithm.execute());
-
-// Obter métricas
-const metrics = monitor.getMetrics();
-console.log('Performance metrics:', metrics);
-```
-
-> 📘 **Nota**: Para mais exemplos detalhados, consulte a pasta `examples/`.
-
----
-
-## 📁 Estrutura do Projeto
-
-```
-qubitsim/
-├── src/
-│   ├── core/           # Componentes fundamentais
-│   │   ├── qubit.js
-│   │   ├── quantumRegister.js
-│   │   └── measurement.js
-│   ├── crypto/         # Funcionalidades de criptografia
-│   │   ├── generateKey.js
-│   │   ├── encryptMessage.js
-│   │   └── decryptMessage.js
-│   ├── gates/          # Portas quânticas
-│   │   ├── hadamard.js
-│   │   ├── pauli.js
-│   │   └── cnot.js
-│   ├── algorithms/     # Algoritmos quânticos
-│   │   ├── deutschJozsa.js
-│   │   ├── grover.js
-│   │   ├── shor.js
-│   │   └── bernsteinVazirani.js
-│   ├── ui/            # Interface do usuário
-│   │   ├── components/
-│   │   ├── hooks/
-│   │   └── themes/
-│   ├── monitoring/    # Sistema de monitoramento
-│   │   ├── metrics/
-│   │   ├── profiling/
-│   │   └── alerts/
-│   ├── i18n/         # Internacionalização
-│   │   ├── locales/
-│   │   └── config.js
-│   └── index.js
-├── tests/              # Testes unitários
-├── docs/              # Documentação da API
-├── examples/          # Exemplos de uso
-└── package.json
-```
-
----
-
-## 📚 Documentação
-
-A documentação completa da API está disponível em `docs/`. Para gerar a documentação localmente:
-
-```bash
-npm run docs
-```
-
-Após a geração, abra `docs/index.html` no seu navegador para explorar a documentação interativa.
-
-### Guias Disponíveis
-- [Visão Geral](docs/OVERVIEW.md)
-- [Guia de Início Rápido](docs/quickstart.md)
-- [Referência da API](docs/api.md)
-- [Guia de Desenvolvimento](docs/development.md)
-- [Guia de Segurança](docs/security.md)
-- [Guia de Performance](docs/performance.md)
-- [Guia de Acessibilidade](docs/accessibility.md)
-- [Guia de Internacionalização](docs/i18n.md)
-- [Guia de Monitoramento](docs/monitoring.md)
-- [Guia de CI/CD](docs/ci-cd.md)
-- [FAQ](docs/faq.md)
-
----
-
-## 🧪 Testes
-
-Para garantir a qualidade e confiabilidade, o QubitSim possui uma suíte abrangente de testes:
-
-```bash
-# Executar todos os testes
+### Running the Simulator
+bash
+# Run core simulation tests
 npm test
 
-# Executar testes com cobertura
-npm run test:coverage
+# Start the development server (React UI)
+npm run dev
 
-# Executar testes específicos
-npm test -- --testPathPattern=qubit
+# Build the library
+npm run build
 
-# Executar testes de performance
-npm run test:performance
 
-# Executar testes de acessibilidade
-npm run test:a11y
+### Example: Creating a Bell State
+javascript
+import { QubitSim, Gates } from 'qubitsim';
 
-# Executar testes de integração
-npm run test:integration
-```
+const sim = new QubitSim();
+// Apply Hadamard to first qubit
+sim.applyGate(Gates.H, 0);
+// Apply CNOT (Control: 0, Target: 1)
+sim.applyGate(Gates.CNOT, [0, 1]);
 
----
-
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas e muito apreciadas! Siga estes passos:
-
-1. 🍴 Faça um fork do projeto
-2. 🌿 Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. 💾 Commit suas mudanças (`git commit -m 'feat(scope): add some AmazingFeature'`)
-4. 📤 Push para a branch (`git push origin feature/AmazingFeature`)
-5. 🔍 Abra um Pull Request
-
-Consulte nossos guias detalhados:
-- [Guia de Contribuição](CONTRIBUTING.md)
-- [Guia de Estilo](docs/style-guide.md)
-- [Guia de Desenvolvimento](docs/development.md)
-- [Guia de Testes](docs/testing.md)
-
----
-
-## 🔒 Segurança
-
-O QubitSim leva a segurança a sério. Implementamos:
-
-- Validação rigorosa de inputs
-- Criptografia de dados sensíveis
-- Proteção contra ataques comuns (XSS, CSRF)
-- Auditoria automática de dependências
-- Monitoramento de vulnerabilidades
-
-Para reportar vulnerabilidades de segurança, por favor envie um email para security@qubitsim.com.
-
-Consulte nosso [Guia de Segurança](docs/security.md) para mais detalhes.
-
----
-
-## 📈 Performance
-
-O QubitSim é otimizado para:
-
-- Execução eficiente de algoritmos quânticos
-- Renderização rápida de interfaces
-- Gerenciamento inteligente de memória
-- Cache automático de resultados
-- Carregamento lazy de componentes
-
-Recursos de monitoramento incluem:
-- Métricas em tempo real
-- Profiling detalhado
-- Alertas automáticos
-- Dashboards personalizáveis
-- Logs estruturados
-
-Consulte nosso [Guia de Performance](docs/performance.md) para mais detalhes.
-
----
-
-## 🌐 Internacionalização
-
-O QubitSim suporta múltiplos idiomas:
-
-- 🇧🇷 Português (Brasil)
-- 🇺🇸 English
-- 🇪🇸 Español
-
-Para adicionar um novo idioma ou melhorar traduções existentes, consulte nosso [Guia de Internacionalização](docs/i18n.md).
-
----
-
-## ♿ Acessibilidade
-
-O QubitSim segue as diretrizes WCAG 2.1:
-
-- Navegação por teclado
-- Suporte a leitores de tela
-- Alto contraste
-- Textos redimensionáveis
-- Legendas e descrições
-
-Consulte nosso [Guia de Acessibilidade](docs/accessibility.md) para mais detalhes.
-
----
-
-## 📄 Licença
-
-Este projeto está licenciado sob a [Licença MIT](LICENSE) - veja o arquivo LICENSE para detalhes.
-
-<div align="center">
-  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"/>
-</div>
-
-A licença MIT é uma licença de software permissiva que coloca poucas restrições de uso, modificação e distribuição. Ela permite:
-
-- ✅ Uso comercial
-- ✅ Modificação
-- ✅ Distribuição
-- ✅ Uso privado
-
-A única exigência é manter o aviso de copyright e a licença em qualquer cópia do software/código fonte.
-
----
-
-## 👥 Autores
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/maikonweber">
-        <img src="https://github.com/maikonweber.png" width="100px;" alt="Maikon Weber"/>
-        <br />
-        <sub><b>Maikon Weber</b></sub>
-      </a>
-      <br />
-      <sub>Desenvolvimento inicial</sub>
-    </td>
-    <td align="center">
-      <a href="https://github.com/dougdotcon">
-        <img src="https://github.com/dougdotcon.png" width="100px;" alt="Douglas Machado"/>
-        <br />
-        <sub><b>Douglas Machado</b></sub>
-      </a>
-      <br />
-      <sub>Desenvolvimento inicial</sub>
-    </td>
-    <td align="center">
-      <a href="https://github.com/suissa">
-        <img src="https://github.com/suissa.png" width="100px;" alt="Jean Suissa"/>
-        <br />
-        <sub><b>Jean Suissa</b></sub>
-      </a>
-      <br />
-      <sub>Desenvolvimento inicial</sub>
-    </td>
-  </tr>
-</table>
+console.log(sim.getState());
+// Output: Bell State (|00> + |11>) / sqrt(2)
 
 
 ---
 
-## 📝 Notas
+## 🤝 Contributing
 
-Este é um projeto educacional para estudo e simulação de conceitos de computação quântica. Não deve ser usado para criptografia em produção sem uma revisão de segurança adequada.
-
-### Status do Projeto
-- **Fase Atual**: 3 - Funcionalidades Core
-- **Progresso**: 80%
-- **Próximos Passos**:
-  1. Implementação do algoritmo de Shor
-  2. Melhorias na visualização de circuitos
-  3. Otimizações de performance
-  4. Expansão da documentação
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
 ---
 
-<div align="center">
-  <sub>Construído com ❤️ por entusiastas da computação quântica.</sub>
-</div> 
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
