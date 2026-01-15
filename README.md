@@ -1,126 +1,99 @@
-# QubitSim - Unified Physics Quantum Simulator
+# QubitSim
 
-<div align="center">
-  <h1>QubitSim</h1>
-  <p><strong>A Quantum Computing Simulator integrated with Unified Physics (ToE) concepts.</strong></p>
-  <p>Fundamental Constant: <strong>Ω = 117.038</strong></p>
-</div>
+### Unified Physics Quantum Simulator
 
-<div align="center">
-  <img src="https://img.shields.io/badge/JavaScript-ESModules-yellow?style=for-the-badge&logo=javascript" alt="JavaScript"/>
-  <img src="https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react" alt="React"/>
-  <img src="https://img.shields.io/badge/Physics-Unified-purple?style=for-the-badge" alt="Unified Physics"/>
-  <img src="https://img.shields.io/badge/Coverage-80%25-green?style=for-the-badge" alt="Coverage"/>
-</div>
+![QubitSim Banner](./assets/generated/vacuum_fluctuations.svg)
+
+[![JavaScript](https://img.shields.io/badge/JavaScript-ESModules-f7df1e?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![React](https://img.shields.io/badge/React-18-61dafb?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Unified Physics](https://img.shields.io/badge/Physics-OMG_117.038-purple?style=for-the-badge)](./src/core/unified_physics.js)
+[![Coverage](https://img.shields.io/badge/Coverage-Passing-success?style=for-the-badge)](./coverage/lcov-report/index.html)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
 ---
 
-## 🌌 Project Overview
+## Project Overview
 
-**QubitSim** goes beyond classical quantum simulation by integrating principles of **Unified Physics**. It simulates quantum logic while accounting for **Entropic Vacuum Fluctuations** and **Holographic Information Density**, governed by the fundamental constant **Ω (117.038)**.
+**QubitSim** is a simulation library that bridges classical quantum computing algorithms with the principles of **Unified Physics**. Unlike standard simulators, QubitSim integrates Entropic Vacuum Fluctuations and Holographic Information Density, governed by the emergent constant **Omega (117.038)**.
 
-This project serves as both a rigorous educational tool for standard quantum algorithms (Shor, Grover) and a research platform for "New Physics" decoherence models.
+This platform allows researchers and developers to:
 
-### Key Features
+1. Study standard algorithms (Shor, Grover) under realistic entropic noise.
+2. Visualize the interaction between qubit states and the vacuum substrate.
+3. Simulate "New Physics" decoherence models.
 
-* **⚡ Advanced Algorithms**: Full implementation of Shor (Period Finding), Grover (Search), Bernstein-Vazirani, and Deutsch-Jozsa.
-* **🌌 Unified Physics Core**:
-  * **Entropic Noise**: Qubits naturally interact with the vacuum information substrate.
-  * **Ω-Scaling**: Decoherence and gravity operations scale with 117.038.
-  * **Holographic Optimization**: "Best-path" finding using entropic gradients.
-* **🔒 Quantum Cryptography**: BB84 Protocol implementation for Quantum Key Distribution (QKD) and One-Time Pad encryption.
-* **📊 Visualization**: Real-time Bloch Sphere visualization with entropic noise monitoring.
+![Optimizer Convergence](./assets/generated/optimizer_convergence.svg)
+*Figure: Entropic Optimizer convergence path minimizing a cost function under holographic constraints.*
 
 ---
 
-## 🛠️ Architecture
+## Key Features
 
-The project is modularized into three main layers:
+### Unified Physics Core
 
-1. **Core (`src/core/`)**:
-    * `Qubit.js`: Mathematical model of a qubit (Complex amplitudes).
-    * `QuantumRegister.js`: N-qubit system state vector and gate operations.
-    * `unified_physics.js`: The engine for Entropic Gravity and Vacuum Fluctuations.
-2. **Algorithms (`interface/src/algorithms/`)**:
-    * Implementations of Shor, Grover, QFT, etc.
-3. **Interface (`interface/src/`)**:
-    * React-based frontend for interacting with the simulation.
+The simulation engine (`src/core/unified_physics.js`) introduces:
 
----
+- **Entropic Noise**: Qubits interact with vacuum fluctuations derived from Omega.
+- **Holographic Optimization**: Gradient descent modified by entropic density.
+- **Emergent Gravity**: Simulation of entropic forces at microscopic scales.
 
-## 🧪 Algorithms Implemented
+### Quantum Algorithms
 
-| Algorithm | Status | Description |
-| :--- | :--- | :--- |
-| **Shor's Algorithm** | ✅ Active | Factors integers using Quantum Period Finding and Inverse QFT. |
-| **Grover's Algorithm** | ✅ Active | Unstructured search with O(√N) complexity. |
-| **Bernstein-Vazirani** | ✅ Active | Finds a hidden string in a single query. |
-| **Deutsch-Jozsa** | ✅ Active | Determines if a function is constant or balanced. |
-| **QFT** | ✅ Active | Quantum Fourier Transform (Standard & Inverse). |
-| **BB84 (Crypto)** | ✅ Active | Quantum Key Distribution protocol. |
+Full implementations of:
+
+- **Shor's Algorithm**: Integer factorization.
+- **Grover's Algorithm**: Unstructured search.
+- **Bernstein-Vazirani**: Hidden string finding.
+- **Deutsch-Jozsa**: Oracle function analysis.
+
+### Cryptography
+
+- **BB84 Protocol**: Quantum Key Distribution simulation.
+- **One-Time Pad**: Quantum-safe message encryption.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-* Node.js (v16+)
-* npm
+![Node.js](https://img.shields.io/badge/Node.js-v16+-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 
 ### Installation
 
 ```bash
-# Clone the repository
 git clone https://github.com/your-repo/qubitsim.git
-
-# Install dependencies
 npm install
-
-# Install Interface dependencies
-cd interface
-npm install
-cd ..
 ```
 
-### Running Tests
+### Running the Interface
 
-We maintain high code coverage (>80%) to ensure mathematical accuracy.
-
-```bash
-# Run full test suite with coverage
-npm run test:coverage
-```
-
-### Running the Simulator (UI)
+The project includes a React-based visualization interface.
 
 ```bash
-# Start the React Interface
 npm run dev
 ```
 
----
+### Testing
 
-## 🧠 Unified Physics Integration
+We maintain rigorous testing standards locally.
 
-The simulator uses `src/core/unified_physics.js` to inject realistic noise models:
-
-```javascript
-import { OMEGA, calculateVacuumFluctuation } from './core/unified_physics';
-
-// Qubits automatically experience vacuum fluctuations
-// Magnitude depends on the 'temperature' of the vacuum and Ω.
-qubit.applyVacuumFluctuations(temperature);
+```bash
+npm run test:coverage
 ```
 
 ---
 
-## 🤝 Contributing
+## Architecture
 
-Contributions are welcome, especially for optimizing the `QuantumRegister` for larger qubit counts (Product State Optimization).
+| Module | Description |
+| :--- | :--- |
+| **Core** | `Qubit`, `QuantumRegister`, and `UnifiedPhysics` logic. |
+| **Algorithms** | High-level implementations of quantum logic flows. |
+| **Interface** | React components for real-time state visualization. |
 
 ---
 
-## 📜 License
+## License
 
-MIT License.
+This project is licensed under the MIT License.

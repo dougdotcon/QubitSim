@@ -1,120 +1,99 @@
 # QubitSim
 
-<div align="center">
-  <img src="assets/img/LOGOSPNG/logo.png" alt="QubitSim" width="220"/>
-  <h1>QubitSim</h1>
-  <p><strong>Uma biblioteca JavaScript para simulação de computação quântica e criptografia pós-quântica</strong></p>
-</div>
+### Simulador Quântico de Física Unificada
 
-<div align="center">
-  <!-- Tecnologias Principais -->
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
-  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
-  <img src="https://img.shields.io/badge/ESModules-007ACC?style=for-the-badge&logo=javascript&logoColor=white" alt="ES Modules"/>
-  <!-- Frameworks & Ferramentas -->
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"/>
-  <img src="https://img.shields.io/badge/JSDoc-008CC1?style=for-the-badge&logo=javascript&logoColor=white" alt="JSDoc"/>
-  <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" alt="Jest"/>
-  <!-- Infraestrutura -->
-  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
-  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis"/>
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
-</div>
+![QubitSim Banner](./assets/generated/vacuum_fluctuations.svg)
+
+[![JavaScript](https://img.shields.io/badge/JavaScript-ESModules-f7df1e?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![React](https://img.shields.io/badge/React-18-61dafb?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Física Unificada](https://img.shields.io/badge/Physics-OMG_117.038-purple?style=for-the-badge)](./src/core/unified_physics.js)
+[![Cobertura](https://img.shields.io/badge/Coverage-Passing-success?style=for-the-badge)](./coverage/lcov-report/index.html)
+[![Licença](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
 ---
 
-## 📋 Visão Geral
+## Visão Geral
 
-**QubitSim** é uma biblioteca JavaScript moderna que implementa conceitos fundamentais de computação quântica e criptografia pós-quântica. Projetada para ser intuitiva e educacional, permite aos desenvolvedores e pesquisadores:
+**QubitSim** é uma biblioteca de simulação que une algoritmos de computação quântica clássica com os princípios da **Física Unificada**. Diferente de simuladores padrão, o QubitSim integra Flutuações de Vácuo Entrópicas e Densidade de Informação Holográfica, governadas pela constante emergente **Omega (117.038)**.
 
-- Simular operações com qubits e registradores quânticos
-- Implementar algoritmos clássicos (Grover, Shor, Deutsch-Jozsa, etc.)
-- Visualizar estados quânticos e amplitudes
-- Explorar protocolos de criptografia quântica
-- Monitorar desempenho via integração com WebAssembly
+Esta plataforma permite a pesquisadores e desenvolvedores:
 
-Ideal para estudantes, educadores e entusiastas que desejam explorar o mundo da computação quântica sem a necessidade de hardware físico real.
+1. Estudar algoritmos padrão (Shor, Grover) sob ruído entrópico realista.
+2. Visualizar a interação entre estados de qubit e o substrato de vácuo.
+3. Simular modelos de decoerência da "Nova Física".
 
-> **Nota de Escopo:**
-> Este projeto é um **simulador clássico**. Ele implementa qubits, portas e algoritmos funcionais para servir como um laboratório de simulação e aprendizado. **Não é um sistema para execução em hardware quântico real**, mas sim uma ferramenta padrão para prototipagem de lógica quântica em ambiente clássico.
+![Convergência do Otimizador](./assets/generated/optimizer_convergence.svg)
+*Figura: Caminho de convergência do Otimizador Entrópico minimizando uma função de custo sob restrições holográficas.*
 
 ---
 
-## 🚀 Funcionalidades Principais
+## Funcionalidades Principais
 
-### ⚛️ Operações Quânticas Fundamentais
-- **Manipulação de Qubits**: Criação, transformação e medição de estados quânticos.
-- **Portas Quânticas**: Implementação de Hadamard (H), Pauli (X, Y, Z), CNOT e portas de rotação.
-- **Visualização**: Ferramentas para visualizar o vetor de estado e distribuição de probabilidades do sistema.
+### Núcleo de Física Unificada
 
-### 🔐 Criptografia Quântica
-- **Simulação de Protocolos**: Simulações de protocolos de Distribuição de Chaves Quânticas (QKD).
-- **Modelos de Ataque**: Implementação de cenários de interceptação para demonstrar segurança.
+O motor de simulação (`src/core/unified_physics.js`) introduz:
 
-### ⚡ Desempenho e Ferramentas
-- **Integração com WebAssembly**: Tarefas computacionais pesadas são ofloadadas para WASM para maior velocidade.
-- **Type-Safe**: Desenvolvido em TypeScript para um código robusto e seguro.
-- **Testes Exaustivos**: Utiliza Jest para garantir a precisão matemática dos algoritmos.
-- **Pronto para Infraestrutura**: Inclui configurações de Docker para PostgreSQL e Redis para gerenciamento de estado e escalabilidade.
+- **Ruído Entrópico**: Qubits interagem com flutuações de vácuo derivadas de Omega.
+- **Otimização Holográfica**: Gradiente descendente modificado pela densidade entrópica.
+- **Gravidade Emergente**: Simulação de forças entrópicas em escalas microscópicas.
 
----
+### Algoritmos Quânticos
 
-## 🏗️ Arquitetura
+Implementações completas de:
 
-O projeto é estruturado em três camadas principais:
+- **Algoritmo de Shor**: Fatoração de inteiros.
+- **Algoritmo de Grover**: Busca não estruturada.
+- **Bernstein-Vazirani**: Busca de string oculta.
+- **Deutsch-Jozsa**: Análise de função oráculo.
 
-1. **Núcleo (Core Engine)**: A base matemática que manipula operações lineares (números complexos, multiplicação de matrizes).
-2. **Camada de Simulação**: Lógica para algoritmos específicos e operações de portas.
-3. **Camada de Interface**: UI em React para visualização e API em Node.js para acesso programático.
+### Criptografia
+
+- **Protocolo BB84**: Simulação de Distribuição de Chaves Quânticas.
+- **One-Time Pad**: Criptografia de mensagens quantum-safe.
 
 ---
 
-## 🔧 Instalação e Uso
+## Iniciando
 
 ### Pré-requisitos
-- Node.js (v16+)
-- Docker (opcional, para infraestrutura)
 
-### Instalar Dependências
-bash
+![Node.js](https://img.shields.io/badge/Node.js-v16+-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+
+### Instalação
+
+```bash
+git clone https://github.com/seu-repo/qubitsim.git
 npm install
+```
 
+### Executando a Interface
 
-### Executando o Simulador
-bash
-# Executar testes do núcleo
-npm test
+O projeto inclui uma interface de visualização baseada em React.
 
-# Iniciar o servidor de desenvolvimento (UI React)
+```bash
 npm run dev
+```
 
-# Compilar a biblioteca
-npm run build
+### Testes
 
+Mantemos padrões rigorosos de teste localmente.
 
-### Exemplo: Criando um Estado de Bell
-javascript
-import { QubitSim, Gates } from 'qubitsim';
-
-const sim = new QubitSim();
-// Aplica Hadamard no primeiro qubit
-sim.applyGate(Gates.H, 0);
-// Aplica CNOT (Controle: 0, Alvo: 1)
-sim.applyGate(Gates.CNOT, [0, 1]);
-
-console.log(sim.getState());
-// Saída: Estado de Bell (|00> + |11>) / sqrt(2)
-
+```bash
+npm run test:coverage
+```
 
 ---
 
-## 🤝 Contribuindo
+## Arquitetura
 
-Contribuições são bem-vindas! Por favor, leia nosso [Guia de Contribuição](CONTRIBUTING.md) para detalhes sobre o nosso código de conduta e o processo de envio de pull requests.
+| Módulo | Descrição |
+| :--- | :--- |
+| **Core** | Lógica de `Qubit`, `QuantumRegister` e `UnifiedPhysics`. |
+| **Algorithms** | Implementações de alto nível de fluxos lógicos quânticos. |
+| **Interface** | Componentes React para visualização de estado em tempo real. |
 
 ---
 
-## 📜 Licença
+## Licença
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+Este projeto está licenciado sob a Licença MIT.
