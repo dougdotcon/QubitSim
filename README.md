@@ -1,14 +1,14 @@
 # QubitSim
 
-### Unified Physics Quantum Simulator
-
-![QubitSim Banner](./assets/generated/vacuum_fluctuations.svg)
+## Unified Physics Quantum Simulator
 
 [![JavaScript](https://img.shields.io/badge/JavaScript-ESModules-f7df1e?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![React](https://img.shields.io/badge/React-18-61dafb?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Unified Physics](https://img.shields.io/badge/Physics-OMG_117.038-purple?style=for-the-badge)](./src/core/unified_physics.js)
 [![Coverage](https://img.shields.io/badge/Coverage-Passing-success?style=for-the-badge)](./coverage/lcov-report/index.html)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+
+![QubitSim Banner](./assets/generated/vacuum_fluctuations.svg)
 
 ---
 
@@ -23,6 +23,7 @@ This platform allows researchers and developers to:
 3. Simulate "New Physics" decoherence models.
 
 ![Optimizer Convergence](./assets/generated/optimizer_convergence.svg)
+
 *Figure: Entropic Optimizer convergence path minimizing a cost function under holographic constraints.*
 
 ---

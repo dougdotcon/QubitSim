@@ -1,14 +1,14 @@
 # QubitSim
 
-### Simulador Quântico de Física Unificada
-
-![QubitSim Banner](./assets/generated/vacuum_fluctuations.svg)
+## Simulador Quântico de Física Unificada
 
 [![JavaScript](https://img.shields.io/badge/JavaScript-ESModules-f7df1e?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![React](https://img.shields.io/badge/React-18-61dafb?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Física Unificada](https://img.shields.io/badge/Physics-OMG_117.038-purple?style=for-the-badge)](./src/core/unified_physics.js)
 [![Cobertura](https://img.shields.io/badge/Coverage-Passing-success?style=for-the-badge)](./coverage/lcov-report/index.html)
 [![Licença](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+
+![QubitSim Banner](./assets/generated/vacuum_fluctuations.svg)
 
 ---
 
@@ -23,6 +23,7 @@ Esta plataforma permite a pesquisadores e desenvolvedores:
 3. Simular modelos de decoerência da "Nova Física".
 
 ![Convergência do Otimizador](./assets/generated/optimizer_convergence.svg)
+
 *Figura: Caminho de convergência do Otimizador Entrópico minimizando uma função de custo sob restrições holográficas.*
 
 ---
