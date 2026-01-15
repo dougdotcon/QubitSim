@@ -1,28 +1,29 @@
-import { QuantumRegister } from "./quantumRegister.js";
-import { Qubit } from "./qubit.js";
 
-export function decryptMessage(qubits, receivedParity) {
-  const quantumRegister = new QuantumRegister();
-  quantumRegister.qubits = qubits;
-
-  // Detecção de interferência
-  const calculatedParity = quantumRegister.checkParity();
-
-  // Verificação de interferência
-  if (receivedParity !== calculatedParity) {
-    console.log("Interferência detectada durante a transmissão.");
-    return null;
+/**
+ * Decrypts an array of bits using a One-Time Pad (XOR with key).
+ * @param {number[]} encryptedBits - Array of encrypted bits.
+ * @param {number[]} key - Array of key bits.
+ * @returns {string} The decrypted plaintext string.
+ */
+export function decryptMessage(encryptedBits, key) {
+  if (key.length < encryptedBits.length) {
+    throw new Error("Key length too short for decryption.");
   }
 
-  // Medição dos qubits
-  const measurementResults = quantumRegister.measureAll();
+  // Decrypt (XOR) - XOR is its own inverse
+  const decryptedBits = encryptedBits.map((b, i) => b ^ key[i]);
 
-  // Decodificação da mensagem
-  let decryptedMessage = "";
-  for (let i = 0; i < measurementResults.length; i++) {
-    const bit = measurementResults[i];
-    decryptedMessage += bit.toString();
+  // Convert bits to string
+  let message = "";
+  for (let i = 0; i < decryptedBits.length; i += 8) {
+    let charCode = 0;
+    for (let j = 0; j < 8; j++) {
+      // Safety check for incomplete byte at end
+      if (i + j < decryptedBits.length) {
+        charCode = (charCode << 1) | decryptedBits[i + j];
+      }
+    }
+    message += String.fromCharCode(charCode);
   }
-
-  return decryptedMessage;
+  return message;
 }

@@ -1,19 +1,11 @@
-import { decryptMessage } from './decryptMessage.js';
-import { encryptMessage } from './encriptMessege.js';
+// Core Exports
+export { Qubit, Complex } from './core/qubit.js';
+export { QuantumRegister } from './core/quantumRegister.js';
+export { OMEGA, entropicOptimizer, calculateVacuumFluctuation } from './core/unified_physics.js';
 
+// Crypto Exports
+export { generateRandomKey } from './crypto/generateKey.js';
+export { BB84 } from './crypto/bb84.js';
 
-const message = "101010";
-console.log("Mensagem original:", message);
-
-// Alice criptografa a mensagem e envia para Bob
-const { qubits, parity } = encryptMessage(message);
-
-// Simulando interferência
-// qubits[0].coefficients[0] = 0.2; // Exemplo de alteração nos coeficientes do primeiro qubit
-
-// Bob recebe os qubits e realiza a descriptografia
-const decryptedMessages = decryptMessage(qubits, parity);
-
-if (decryptedMessages) {
-  console.log("Mensagem descriptografada:", decryptedMessages);
-}
+// Note: encryptMessage and decryptMessage are largely superseded by BB84 but kept for reference if needed
+// export { encryptMessage } from './crypto/encryptMessage.js';

@@ -1,6 +1,11 @@
 /**
  * Representa um número complexo para cálculos quânticos
  */
+import { OMEGA, calculateVacuumFluctuation } from './unified_physics.js';
+
+/**
+ * Representa um número complexo para cálculos quânticos
+ */
 class Complex {
   constructor(real = 0, imag = 0) {
     this.real = real;
@@ -66,6 +71,21 @@ export class Qubit {
       this.alpha = new Complex(this.alpha.real / norm, this.alpha.imag / norm);
       this.beta = new Complex(this.beta.real / norm, this.beta.imag / norm);
     }
+  }
+
+  /**
+   * Aplica flutuações do vácuo baseadas na física unificada (Ω = 117.038)
+   * Simula a interação com o substrato informacional
+   * @param {number} intensity - Intensidade da flutuação (padrão baseada em Ω)
+   */
+  applyVacuumFluctuations(intensity = 0.001) {
+    const fluctuationAlpha = calculateVacuumFluctuation(intensity);
+    const fluctuationBeta = calculateVacuumFluctuation(intensity);
+
+    this.alpha = this.alpha.add(fluctuationAlpha);
+    this.beta = this.beta.add(fluctuationBeta);
+
+    this.normalize(); // Re-normaliza após interação com o vácuo
   }
 
   /**

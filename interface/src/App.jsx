@@ -8,6 +8,7 @@ import DeutschJozsaVisualizer from './components/DeutschJozsaVisualizer';
 import GroverVisualizer from './components/GroverVisualizer';
 import ShorVisualizer from './components/ShorVisualizer';
 import BernsteinVaziraniVisualizer from './components/BernsteinVaziraniVisualizer';
+import Playground from './components/Playground';
 
 const theme = createTheme({
   palette: {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/grover" element={<GroverVisualizer />} />
           <Route path="/shor" element={<ShorVisualizer />} />
           <Route path="/bernstein-vazirani" element={<BernsteinVaziraniVisualizer />} />
+          <Route path="/playground" element={<Playground />} />
         </Routes>
       </Router>
     </ThemeProvider>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Paper, Button, Typography, Box, Grid, Slider, TextField } from '@mui/material';
 import { Grover } from '../algorithms/Grover';
+import { Complex } from '../../../src/core/quantumRegister.js'; // Importação necessária para o oracle
 import QuantumGraph from './QuantumGraph';
 
 export default function GroverVisualizer() {
@@ -11,14 +12,29 @@ export default function GroverVisualizer() {
   const [target, setTarget] = useState(1);
 
   const initializeAlgorithm = () => {
-    const grover = new Grover(n, target);
+    // Definir função oráculo baseada no alvo
+    const oracleFunc = (register) => {
+      // Simulação de Oráculo de Fase: Inverte o sinal da amplitude do estado alvo
+      // |x> -> -|x> se x == target
+      // Em um circuito real, isso seria um Multi-Controlled Z com X gates para selecionar o estado.
+      // Como estamos simulando a física:
+      register.amplitudes = register.amplitudes.map((amp, idx) => {
+        if (idx === target) {
+          // Inverte sinal: multiply by -1
+          return new Complex(-amp.real, -amp.imag);
+        }
+        return amp;
+      });
+    };
+
+    const grover = new Grover(n, oracleFunc);
     setAlgorithm(grover);
     setResult(null);
   };
 
   const runAlgorithm = async () => {
     if (!algorithm) return;
-    
+
     setIsRunning(true);
     try {
       const result = await algorithm.execute();

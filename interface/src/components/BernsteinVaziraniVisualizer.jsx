@@ -12,14 +12,33 @@ export default function BernsteinVaziraniVisualizer() {
   const [parityBit, setParityBit] = useState('0');
 
   const initializeAlgorithm = () => {
-    const bv = new BernsteinVazirani(numQubits, targetString, parityBit);
+    // Definir função oráculo baseada na string alvo
+    const oracleFunc = (register) => {
+      const n = targetString.length;
+      const ancillaIndex = register.numQubits - 1;
+
+      for (let i = 0; i < n; i++) {
+        if (targetString[i] === '1') {
+          register.applyCNOT(i, ancillaIndex);
+        }
+      }
+
+      // Se houver bit de paridade (simulado via X no ancilla antes ou depois?)
+      // O algoritmo padrão BV é apenas s.x
+      // Se parityBit for '1', isso seria s.x + 1 (flip no output)
+      if (parityBit === '1') {
+        register.applyPauliX(ancillaIndex);
+      }
+    };
+
+    const bv = new BernsteinVazirani(numQubits, oracleFunc);
     setAlgorithm(bv);
     setResult(null);
   };
 
   const runAlgorithm = async () => {
     if (!algorithm) return;
-    
+
     setIsRunning(true);
     try {
       const result = await algorithm.execute();

@@ -1,55 +1,52 @@
-import { Qubit } from '../../src/core/qubit.js';
-import { QuantumRegister } from '../../src/core/quantumRegister.js';
+import { QuantumRegister } from '../../../src/core/quantumRegister.js';
 
 export class BernsteinVazirani {
-  constructor(n, a, b) {
-    this.n = n; // número de qubits
-    this.a = a; // string de bits que representa a função
-    this.b = b; // bit de paridade
-    this.register = new QuantumRegister(n + 1); // n qubits de entrada + 1 qubit auxiliar
-  }
-
-  // Oráculo que implementa a função f(x) = a·x ⊕ b
-  oracle() {
-    // Aplica CNOT controlado pelos qubits de entrada no qubit auxiliar
-    for (let i = 0; i < this.n; i++) {
-      if (this.a[i] === '1') {
-        this.register.applyCNOT(i, this.n);
-      }
-    }
-
-    // Aplica X no qubit auxiliar se b = 1
-    if (this.b === '1') {
-      this.register.applyPauliX(this.n);
-    }
+  /**
+   * Inicializa o algoritmo de Bernstein-Vazirani
+   * @param {number} n - Número de qubits de entrada (tamanho da string secreta)
+   * @param {Function} oracleFunc - Função oráculo caixa-preta U_f
+   */
+  constructor(n, oracleFunc) {
+    this.n = n;
+    this.oracleFunc = oracleFunc;
+    // Registro: n qubits de entrada + 1 qubit auxiliar (ancilla)
+    this.register = new QuantumRegister(n + 1);
   }
 
   // Executa o algoritmo
   async execute() {
-    // Inicialização
-    this.register.applyHadamard(this.n); // Aplica H no qubit auxiliar
+    // 1. Inicialização do estado
+    // Qubits de entrada (0 a n-1) iniciam em |0>
+    // Qubit auxiliar (n) inicia em |0> -> X -> |1> -> H -> |->
 
-    // Aplica H em todos os qubits de entrada
+    // Prepara ancilla em |-> para Phase Kickback
+    this.register.applyPauliX(this.n);      // |0> -> |1>
+    this.register.applyHadamard(this.n);    // |1> -> |-> = (|0> - |1>)/√2
+
+    // 2. Superposição nos qubits de entrada
     for (let i = 0; i < this.n; i++) {
       this.register.applyHadamard(i);
     }
 
-    // Aplica o oráculo
-    this.oracle();
+    // Estado atual: |+>|+>...|+>|->
 
-    // Aplica H em todos os qubits de entrada novamente
+    // 3. Consulta ao Oráculo (Caixa Preta)
+    // O oráculo aplica f(x) via CNOTs, que devido ao alvo ser |->,
+    // induz um kickback de fase (-1)^f(x) nos qubits de controle.
+    this.oracleFunc(this.register);
+
+    // 4. Interferência (Hadamard na saída)
+    // Isso transforma a fase (-1)^{a.x} de volta para a base computacional
+    // revelando a string 'a'.
     for (let i = 0; i < this.n; i++) {
       this.register.applyHadamard(i);
     }
 
-    // Medição
+    // 5. Medição
+    // Medimos apenas os qubits de entrada (0 a n-1)
     const result = this.register.measureAll();
-    return result;
-  }
 
-  // Verifica se encontrou a string correta
-  isSuccess(result) {
-    const measuredString = result.slice(0, -1).join('');
-    return measuredString === this.a;
+    // Retorna apenas a parte da mensagem (descarta ancilla)
+    return result.slice(0, this.n);
   }
-} 
+}

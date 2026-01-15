@@ -25,6 +25,9 @@ export default function Navbar() {
           <Button color="inherit" component={RouterLink} to="/bernstein-vazirani">
             Bernstein-Vazirani
           </Button>
+          <Button color="inherit" component={RouterLink} to="/playground">
+            Playground (Unified Physics)
+          </Button>
         </Box>
       </Toolbar>
     </AppBar>

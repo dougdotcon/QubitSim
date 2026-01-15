@@ -1,4 +1,7 @@
 import { Qubit, Complex } from "./qubit.js";
+import { calculateVacuumFluctuation } from "./unified_physics.js";
+
+export { Qubit, Complex };
 
 /**
  * Classe QuantumRegister - Implementação correta de um registro quântico
@@ -35,6 +38,19 @@ export class QuantumRegister {
         new Complex(amp.real / norm, amp.imag / norm)
       );
     }
+  }
+
+  /**
+   * Aplica decoerência entrópica a todo o registro
+   * Simula a perda de informação para o ambiente (vácuo)
+   * @param {number} intensity - Intensidade da decoerência
+   */
+  applyEntropicDecoherence(intensity = 0.001) {
+    this.amplitudes = this.amplitudes.map(amp => {
+      const fluctuation = calculateVacuumFluctuation(intensity);
+      return amp.add(fluctuation);
+    });
+    this.normalize();
   }
 
   /**
@@ -80,18 +96,18 @@ export class QuantumRegister {
       if (bit === 0) {
         // |0⟩ -> (|0⟩ + |1⟩)/√2
         newAmplitudes[state] = newAmplitudes[state].add(
-          this.amplitudes[state].multiply(new Complex(1/sqrt2, 0))
+          this.amplitudes[state].multiply(new Complex(1 / sqrt2, 0))
         );
         newAmplitudes[flippedState] = newAmplitudes[flippedState].add(
-          this.amplitudes[state].multiply(new Complex(1/sqrt2, 0))
+          this.amplitudes[state].multiply(new Complex(1 / sqrt2, 0))
         );
       } else {
         // |1⟩ -> (|0⟩ - |1⟩)/√2
         newAmplitudes[flippedState] = newAmplitudes[flippedState].add(
-          this.amplitudes[state].multiply(new Complex(1/sqrt2, 0))
+          this.amplitudes[state].multiply(new Complex(1 / sqrt2, 0))
         );
         newAmplitudes[state] = newAmplitudes[state].add(
-          this.amplitudes[state].multiply(new Complex(-1/sqrt2, 0))
+          this.amplitudes[state].multiply(new Complex(-1 / sqrt2, 0))
         );
       }
     }
@@ -104,7 +120,7 @@ export class QuantumRegister {
    * @param {number} targetQubit - Índice do qubit (0-indexado)
    */
   applyPauliX(targetQubit) {
-    if (targetQubit >= this.numQubits) {
+    if (targetQubit < 0 || targetQubit >= this.numQubits) {
       throw new Error(`Qubit ${targetQubit} não existe no registro`);
     }
 
@@ -191,6 +207,55 @@ export class QuantumRegister {
   }
 
   /**
+   * Aplica a porta SWAP entre dois qubits
+   * @param {number} qubit1 - Índice do primeiro qubit
+   * @param {number} qubit2 - Índice do segundo qubit
+   */
+  applySwap(qubit1, qubit2) {
+    if (qubit1 >= this.numQubits || qubit2 >= this.numQubits) {
+      console.log(`Throwing error for invalid swap: ${qubit1}, ${qubit2} in size ${this.numQubits}`);
+      throw new Error(`Qubit inválido no registro`);
+    }
+    const newAmplitudes = new Array(this.numStates).fill(null).map(() => new Complex(0, 0));
+    for (let state = 0; state < this.numStates; state++) {
+      const bit1 = (state >> (this.numQubits - 1 - qubit1)) & 1;
+      const bit2 = (state >> (this.numQubits - 1 - qubit2)) & 1;
+      if (bit1 !== bit2) {
+        const mask = (1 << (this.numQubits - 1 - qubit1)) | (1 << (this.numQubits - 1 - qubit2));
+        const swappedState = state ^ mask;
+        newAmplitudes[swappedState] = this.amplitudes[state];
+      } else {
+        newAmplitudes[state] = this.amplitudes[state];
+      }
+    }
+    this.amplitudes = newAmplitudes;
+  }
+
+  /**
+   * Aplica a porta Toffoli (CCNOT)
+   * @param {number} control1 - Primeiro qubit de controle
+   * @param {number} control2 - Segundo qubit de controle
+   * @param {number} target - Qubit alvo
+   */
+  applyToffoli(control1, control2, target) {
+    if (control1 >= this.numQubits || control2 >= this.numQubits || target >= this.numQubits) {
+      throw new Error(`Qubit inválido no registro`);
+    }
+    const newAmplitudes = new Array(this.numStates).fill(null).map(() => new Complex(0, 0));
+    for (let state = 0; state < this.numStates; state++) {
+      const b1 = (state >> (this.numQubits - 1 - control1)) & 1;
+      const b2 = (state >> (this.numQubits - 1 - control2)) & 1;
+      if (b1 === 1 && b2 === 1) {
+        const flippedState = state ^ (1 << (this.numQubits - 1 - target));
+        newAmplitudes[flippedState] = this.amplitudes[state];
+      } else {
+        newAmplitudes[state] = this.amplitudes[state];
+      }
+    }
+    this.amplitudes = newAmplitudes;
+  }
+
+  /**
    * Aplica uma porta de fase no qubit especificado
    * @param {number} targetQubit - Índice do qubit
    * @param {number} phase - Fase em radianos
@@ -199,9 +264,7 @@ export class QuantumRegister {
     if (targetQubit >= this.numQubits) {
       throw new Error(`Qubit ${targetQubit} não existe no registro`);
     }
-
     const phaseComplex = Complex.fromPolar(1, phase);
-
     for (let state = 0; state < this.numStates; state++) {
       const bit = (state >> (this.numQubits - 1 - targetQubit)) & 1;
       if (bit === 1) {
@@ -209,6 +272,121 @@ export class QuantumRegister {
       }
     }
   }
+
+  applyPhaseS(targetQubit) { this.applyPhase(targetQubit, Math.PI / 2); }
+  applyT(targetQubit) { this.applyPhase(targetQubit, Math.PI / 4); }
+
+  applyRX(targetQubit, theta) {
+    if (targetQubit >= this.numQubits) throw new Error("Invalid Qubit");
+    const cos = Math.cos(theta / 2);
+    const sin = Math.sin(theta / 2);
+    const newAmplitudes = new Array(this.numStates).fill(null).map(() => new Complex(0, 0));
+    for (let state = 0; state < this.numStates; state++) {
+      const bit = (state >> (this.numQubits - 1 - targetQubit)) & 1;
+      const flipped = state ^ (1 << (this.numQubits - 1 - targetQubit));
+      let termStart = this.amplitudes[state];
+      if (bit === 0) {
+        newAmplitudes[state] = newAmplitudes[state].add(termStart.multiply(new Complex(cos, 0)));
+        newAmplitudes[flipped] = newAmplitudes[flipped].add(termStart.multiply(new Complex(0, -sin)));
+      } else {
+        newAmplitudes[flipped] = newAmplitudes[flipped].add(termStart.multiply(new Complex(0, -sin)));
+        newAmplitudes[state] = newAmplitudes[state].add(termStart.multiply(new Complex(cos, 0)));
+      }
+    }
+    this.amplitudes = newAmplitudes;
+  }
+
+  applyRY(targetQubit, theta) {
+    const cos = Math.cos(theta / 2);
+    const sin = Math.sin(theta / 2);
+    const newAmplitudes = new Array(this.numStates).fill(null).map(() => new Complex(0, 0));
+    for (let state = 0; state < this.numStates; state++) {
+      const bit = (state >> (this.numQubits - 1 - targetQubit)) & 1;
+      const flipped = state ^ (1 << (this.numQubits - 1 - targetQubit));
+      let termStart = this.amplitudes[state];
+      if (bit === 0) {
+        newAmplitudes[state] = newAmplitudes[state].add(termStart.multiply(new Complex(cos, 0)));
+        newAmplitudes[flipped] = newAmplitudes[flipped].add(termStart.multiply(new Complex(sin, 0)));
+      } else {
+        newAmplitudes[flipped] = newAmplitudes[flipped].add(termStart.multiply(new Complex(-sin, 0)));
+        newAmplitudes[state] = newAmplitudes[state].add(termStart.multiply(new Complex(cos, 0)));
+      }
+    }
+    this.amplitudes = newAmplitudes;
+  }
+
+
+  /**
+   * Aplica porta S (Fase PI/2)
+   */
+  applyPhaseS(targetQubit) {
+    this.applyPhase(targetQubit, Math.PI / 2);
+  }
+
+  /**
+   * Aplica porta T (Fase PI/4)
+   */
+  applyT(targetQubit) {
+    this.applyPhase(targetQubit, Math.PI / 4);
+  }
+
+  // Rotações arbitrárias (simplificadas para teste, implementação real requer matrizes de rotação completas)
+  // RX(theta) = [cos(t/2) -isin(t/2); -isin(t/2) cos(t/2)]
+  applyRX(targetQubit, theta) {
+    if (targetQubit >= this.numQubits) throw new Error("Invalid Qubit");
+
+    const cos = Math.cos(theta / 2);
+    const sin = Math.sin(theta / 2);
+    const newAmplitudes = new Array(this.numStates).fill(null).map(() => new Complex(0, 0));
+
+    for (let state = 0; state < this.numStates; state++) {
+      const bit = (state >> (this.numQubits - 1 - targetQubit)) & 1;
+      const flipped = state ^ (1 << (this.numQubits - 1 - targetQubit));
+
+      // Se bit 0: contribui para 0 (cos) e 1 (-isin)
+      // Se bit 1: contribui para 0 (-isin) e 1 (cos)
+
+      let termStart = this.amplitudes[state]; // Amplitute original deste estado
+
+      // Aferição direta na matriz unitária
+      if (bit === 0) {
+        // |0> -> cos|0> - i*sin|1>
+        newAmplitudes[state] = newAmplitudes[state].add(termStart.multiply(new Complex(cos, 0)));
+        newAmplitudes[flipped] = newAmplitudes[flipped].add(termStart.multiply(new Complex(0, -sin)));
+      } else {
+        // |1> -> -i*sin|0> + cos|1>
+        newAmplitudes[flipped] = newAmplitudes[flipped].add(termStart.multiply(new Complex(0, -sin)));
+        newAmplitudes[state] = newAmplitudes[state].add(termStart.multiply(new Complex(cos, 0)));
+      }
+    }
+    this.amplitudes = newAmplitudes;
+  }
+
+  applyRY(targetQubit, theta) {
+    // RY(theta) = [cos(t/2) -sin(t/2); sin(t/2) cos(t/2)]
+    const cos = Math.cos(theta / 2);
+    const sin = Math.sin(theta / 2);
+    const newAmplitudes = new Array(this.numStates).fill(null).map(() => new Complex(0, 0));
+
+    for (let state = 0; state < this.numStates; state++) {
+      const bit = (state >> (this.numQubits - 1 - targetQubit)) & 1;
+      const flipped = state ^ (1 << (this.numQubits - 1 - targetQubit));
+
+      let termStart = this.amplitudes[state];
+
+      if (bit === 0) {
+        // |0> -> cos|0> + sin|1>
+        newAmplitudes[state] = newAmplitudes[state].add(termStart.multiply(new Complex(cos, 0)));
+        newAmplitudes[flipped] = newAmplitudes[flipped].add(termStart.multiply(new Complex(sin, 0)));
+      } else {
+        // |1> -> -sin|0> + cos|1>
+        newAmplitudes[flipped] = newAmplitudes[flipped].add(termStart.multiply(new Complex(-sin, 0)));
+        newAmplitudes[state] = newAmplitudes[state].add(termStart.multiply(new Complex(cos, 0)));
+      }
+    }
+    this.amplitudes = newAmplitudes;
+  }
+
 
   /**
    * Mede todos os qubits do registro
@@ -349,6 +527,41 @@ export class QuantumRegister {
    */
   getProbabilities() {
     return this.amplitudes.map(amp => amp.magnitude() ** 2);
+  }
+
+  /**
+   * Aplica Porta de Fase Controlada (CPHASE)
+   * @param {number} controlQubit
+   * @param {number} targetQubit
+   * @param {number} angle
+   */
+  applyControlledPhase(controlQubit, targetQubit, angle) {
+    const phaseComplex = Complex.fromPolar(1, angle);
+
+    for (let state = 0; state < this.numStates; state++) {
+      const controlBit = (state >> (this.numQubits - 1 - controlQubit)) & 1;
+      const targetBit = (state >> (this.numQubits - 1 - targetQubit)) & 1;
+
+      if (controlBit === 1 && targetBit === 1) {
+        this.amplitudes[state] = this.amplitudes[state].multiply(phaseComplex);
+      }
+    }
+  }
+
+  /**
+   * Aplica QFT Inversa em um subconjunto de qubits
+   */
+  applyQFTInversePartial(startQubit, numQubits) {
+    // Implementação padrão da QFT inversa com portas
+    for (let i = startQubit; i < startQubit + numQubits; i++) {
+      for (let j = startQubit; j < i; j++) {
+        const angle = -Math.PI / Math.pow(2, i - j);
+        this.applyControlledPhase(j, i, angle);
+      }
+      this.applyHadamard(i);
+    }
+    // Nota: Geralmente precisa de SWAPs no final se a ordem dos bits importar,
+    // mas depende da convenção de leitura.
   }
 
   /**

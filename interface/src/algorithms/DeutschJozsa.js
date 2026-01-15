@@ -73,16 +73,22 @@ function applyOracle(register, oracleFunction, numQubits) {
     // Aplica a função
     const functionOutput = oracleFunction(inputString);
 
+    // DEBUG
+    // console.log(`State: ${state}, Input: ${inputString}, Output: ${functionOutput}`);
+
     // Se f(x) = 1, aplica X no qubit auxiliar (inverte o último bit)
     if (functionOutput === 1 || functionOutput === "1") {
-      const auxiliarBit = state & 1;
-      const flippedState = state ^ 1; // Inverte o último bit
+      // Ensure we only process the pair once (when aux bit is 0)
+      if ((state & 1) === 0) {
+        const flippedState = state ^ 1; // Inverte o último bit
 
-      // Troca as amplitudes
-      const temp = newAmplitudes[state];
-      newAmplitudes[state] = newAmplitudes[flippedState];
-      newAmplitudes[flippedState] = temp;
+        // Troca as amplitudes
+        const temp = newAmplitudes[state];
+        newAmplitudes[state] = newAmplitudes[flippedState];
+        newAmplitudes[flippedState] = temp;
+      }
     }
+
   }
 
   register.amplitudes = newAmplitudes;
